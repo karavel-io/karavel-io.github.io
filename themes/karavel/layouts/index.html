@@ -1,1 +1,17 @@
-<h1>Hello world</h1>
+<html>
+  <head>
+    {{ $css := resources.Get "stylesheets/main.scss" | resources.ToCSS | resources.PostCSS }}
+    {{ $js := resources.Get "javascripts/main.js" | js.Build "main.js" }}
+    {{ if hugo.IsProduction }}
+      {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+      {{ $js = $js | minify | fingerprint }}
+    {{ end }}
+    <link href="{{ $css.RelPermalink }}" rel="stylesheet">
+    <script src="{{ $js.RelPermalink }}" type="text/javascript"></script>
+  </head>
+  <body>
+    <main>
+      <nav class="menu"></nav>
+    </main>
+  </body>
+<html>
