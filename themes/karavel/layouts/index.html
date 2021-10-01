@@ -1,17 +1,39 @@
 <html>
   <head>
-    {{ $css := resources.Get "stylesheets/main.scss" | resources.ToCSS | resources.PostCSS }}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+
+    {{ $options := (dict "includePaths" (slice "node_modules")) }}
+    {{ $css := resources.Get "stylesheets/main.scss" | resources.ToCSS $options | resources.PostCSS }}
     {{ $js := resources.Get "javascripts/main.js" | js.Build "main.js" }}
+
     {{ if hugo.IsProduction }}
       {{ $css = $css | minify | fingerprint | resources.PostProcess }}
       {{ $js = $js | minify | fingerprint }}
     {{ end }}
+
     <link href="{{ $css.RelPermalink }}" rel="stylesheet">
     <script src="{{ $js.RelPermalink }}" type="text/javascript"></script>
   </head>
   <body>
+    <header class="main-header">
+      <nav class="header-item off-canvas-menu">
+        <a class="off-canvas-menu-link" href="#">About</a>
+        <a class="off-canvas-menu-link" href="#">Project</a>
+        <a class="off-canvas-menu-link" href="#">Blog</a>
+        <a class="off-canvas-menu-link" href="#">Community</a>
+        <a class="off-canvas-menu-link" href="#">Sponsors</a>
+      </nav>
+
+      <h1 class="header-item header-logo">
+        <a href="/"><img src="/images/logo-karavel.svg" alt="Karavel"></a>
+      </h1>
+
+      <h2 class="header-item text-center">Sailing smoothly on the cloud sea</h2>
+    </header>
     <main>
-      <nav class="menu"></nav>
     </main>
   </body>
 <html>
