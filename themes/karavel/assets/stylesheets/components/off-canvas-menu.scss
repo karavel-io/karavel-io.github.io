@@ -1,5 +1,33 @@
-.menu {
-  background-color: $color;
-  height: 100px;
-  width: 100%;
+
+.off-canvas-menu {
+  display: flex;
+  @include media('<tablet-landscape') {
+    background-color: $dark-gray;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    width: 300px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in-out;
+
+    &.menu-open {
+      transform: translateX(0);
+    }
+  }
+  @include media('>=tablet-landscape') {
+    justify-content: space-between;
+  }
+
+  &-link {
+    color: $light-gray;
+    padding: 10px 0;
+
+    & + & {
+      border-top: 1px solid $light-gray;
+    }
+  }
 }
