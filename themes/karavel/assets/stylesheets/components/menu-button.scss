@@ -1,16 +1,17 @@
 .menu-button {
   position: fixed;
   top: 0;
-  left: 10;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   z-index: 1;
   visibility: hidden;
+  background: rgba(0, 0, 0, 0.2);
   div {
     width: 40px;
     height: 4px;
