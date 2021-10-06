@@ -5,16 +5,6 @@
 
   margin: auto;
   margin-bottom: 60px;
-  h1 {
-    font-family: "Noto serif";
-    font-size: 44px;
-    line-height: 60px;
-  }
-
-  p {
-    font-size: 32px;
-    line-height: 43px;
-  }
 
   @include media(">=tablet-landscape") {
     width: 920px;
