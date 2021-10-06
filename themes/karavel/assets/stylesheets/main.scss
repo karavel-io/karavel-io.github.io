@@ -1,15 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-@import 'vendors/sanitize.css/sanitize.scss';
-@import 'vendors/sanitize.css/forms.scss';
-@import 'vendors/sanitize.css/assets.scss';
-@import 'vendors/sanitize.css/typography.scss';
-@import 'vendors/sanitize.css/reduce-motion.scss';
+@import "vendors/sanitize.css/sanitize.scss";
+@import "vendors/sanitize.css/forms.scss";
+@import "vendors/sanitize.css/assets.scss";
+@import "vendors/sanitize.css/typography.scss";
+@import "vendors/sanitize.css/reduce-motion.scss";
 
-@import 'include-media/dist/_include-media.scss';
+@import "include-media/dist/_include-media.scss";
 
-@import 'variables.scss';
-@import 'base.scss';
+@import "variables.scss";
+@import "base.scss";
 
-@import 'components/main-header.scss';
-@import 'components/off-canvas-menu.scss';
+@import "components/main-header.scss";
+@import "components/main-footer.scss";
+@import "components/off-canvas-menu.scss";
+@import "components/main-card.scss";
+@import "components/button.scss";
+@import "components/card.scss";
+@import "components/card-container.scss";
+@import "components/content.scss";

@@ -1,6 +1,9 @@
-
 // Media queries
-$breakpoints: (tablet-portrait: 768px, tablet-landscape: 1024px, desktop: 1280px);
+$breakpoints: (
+  tablet-portrait: 768px,
+  tablet-landscape: 1024px,
+  desktop: 1280px,
+);
 
 // Colors
 $black: #0f0f0f;
@@ -10,3 +13,4 @@ $gray: #6e6e6e;
 $light-gray: #858585;
 $lighter-gray: #8f8f8f;
 $white: #fff;
+$blue: #251bff;
