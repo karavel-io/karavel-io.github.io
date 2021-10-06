@@ -13,11 +13,13 @@ class OffCanvasMenu {
   }
   openMenu() {
     const element = document.getElementById("off-canvas-menu");
-    element.classList.add("menu-open");
+    element.classList.toggle("menu-open");
+    const menuIcon = document.getElementById("toggle-menu");
+    menuIcon.classList.toggle("open");
   }
 
   bindEvents() {
-    const element = document.getElementById("menu-button");
+    const element = document.getElementById("toggle-menu");
     element.addEventListener("click", this.openMenu);
   }
 }
