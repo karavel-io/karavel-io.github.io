@@ -1,7 +1,7 @@
-
 .off-canvas-menu {
   display: flex;
-  @include media('<tablet-landscape') {
+  @include media("<tablet-landscape") {
+    margin-top: 0 !important;
     background-color: $dark-gray;
     flex-direction: column;
     margin: 0;
@@ -18,16 +18,25 @@
       transform: translateX(0);
     }
   }
-  @include media('>=tablet-landscape') {
+  @include media(">=tablet-landscape") {
     justify-content: space-between;
   }
 
   &-link {
-    color: $light-gray;
+    color: $black;
+    font-size: 24px;
     padding: 10px 0;
-
-    & + & {
-      border-top: 1px solid $light-gray;
+    min-width: 10rem;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    @include media("<=tablet-landscape") {
+      color: $light-gray;
+      & + & {
+        border-top: 1px solid $light-gray;
+      }
     }
   }
 }

@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 74px 0 rgba(142, 142, 142, 0.4);
+  margin: 1rem;
+  min-height: 300px;
+  font-size: 24px;
+  &.xs {
+    width: 18rem;
+    text-align: center;
+    @include media("<tablet-landscape") {
+      width: 80%;
+      margin: 1rem auto;
+    }
+    p {
+      font-size: 32px;
+      margin: 0 0 auto 0;
+    }
+    a {
+      margin: 2rem;
+    }
+  }
+  &.xl {
+    @include media(">=tablet-landscape") {
+      width: 50%;
+    }
+    div {
+      margin: 1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 4;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
