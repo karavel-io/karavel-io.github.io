@@ -32,7 +32,7 @@
     &:hover {
       text-decoration: underline;
     }
-    @include media("<=tablet-landscape") {
+    @include media("<tablet-landscape") {
       color: $light-gray;
       & + & {
         border-top: 1px solid $light-gray;
