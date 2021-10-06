@@ -1,0 +1,51 @@
+.menu-button {
+  position: fixed;
+  top: 0;
+  left: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+  visibility: hidden;
+  div {
+    width: 40px;
+    height: 4px;
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  div::before,
+  div::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  div::before {
+    transform: translateY(-10px);
+  }
+  div::after {
+    transform: translateY(10px);
+  }
+  &.open div {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+  &.open div::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  &.open div::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+  @include media("<=tablet-landscape") {
+    visibility: visible;
+  }
+}
