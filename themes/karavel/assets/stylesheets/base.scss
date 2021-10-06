@@ -10,18 +10,38 @@ html {
   text-align: center;
 }
 
-h1 {
-  font-size: 66px;
+h1,
+h2,
+h3 {
   font-family: "Noto Serif Regular";
   font-weight: lighter;
+}
+
+h1 {
+  font-size: 66px;
+  @include media("<=mobile") {
+    font-size: 33px;
+  }
 }
 
 h2 {
   font-size: 44px;
-  font-family: "Noto Serif Regular";
-  font-weight: lighter;
+  @include media("<=mobile") {
+    font-size: 26px;
+  }
+}
+
+h3 {
+  font-size: 38px;
+  margin: 10px 0;
+  @include media("<=mobile") {
+    font-size: 23px;
+  }
 }
 
 p {
   font-size: 32px;
+  @include media("<=mobile") {
+    font-size: 20px;
+  }
 }

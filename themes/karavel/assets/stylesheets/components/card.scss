@@ -4,8 +4,11 @@
   padding: 36px;
   border-radius: 10px;
   box-shadow: 0 2px 74px 0 rgba(142, 142, 142, 0.4);
-  min-height: 300px;
   font-size: 24px;
+
+  @include media(">tablet-landscape") {
+    min-height: 300px;
+  }
   @include media("<tablet-landscape") {
     width: 100%;
     margin: 18px auto;
@@ -27,7 +30,7 @@
     @include media(">=tablet-landscape") {
       width: 48%;
     }
-    div {
+    p {
       overflow: hidden;
       text-overflow: ellipsis;
       -webkit-line-clamp: 4;
