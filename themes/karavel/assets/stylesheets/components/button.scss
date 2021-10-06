@@ -6,11 +6,10 @@
   color: $blue;
   margin: auto 0 0 auto;
   &:hover {
-    box-shadow: 3px 3px rgba($color: $blue, $alpha: 0.8);
-  }
-  &.fill {
     color: $white;
     background-color: $blue;
+  }
+  &.fill {
     float: right;
     font-size: 26px;
     width: 198px;
