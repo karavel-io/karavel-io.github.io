@@ -4,7 +4,7 @@
   justify-content: center;
 
   margin: auto;
-  margin-bottom: 5rem;
+  margin-bottom: 60px;
   h1 {
     font-family: "Noto serif";
     font-size: 44px;
@@ -20,6 +20,9 @@
     width: 920px;
   }
   @include media("<tablet-landscape") {
-    margin: 5rem;
+    margin: 32px;
+  }
+  @include media("<mobile") {
+    margin: 16px;
   }
 }
