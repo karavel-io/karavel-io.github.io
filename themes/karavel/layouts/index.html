@@ -1,39 +1,126 @@
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title></title>
 
-    {{ $options := (dict "includePaths" (slice "node_modules")) }}
-    {{ $css := resources.Get "stylesheets/main.scss" | resources.ToCSS $options | resources.PostCSS }}
-    {{ $js := resources.Get "javascripts/main.js" | js.Build "main.js" }}
+    {{ $options := (dict "includePaths" (slice "node_modules")) }} {{ $css :=
+    resources.Get "stylesheets/main.scss" | resources.ToCSS $options |
+    resources.PostCSS }} {{ $js := resources.Get "javascripts/main.js" |
+    js.Build "main.js" }} {{ if hugo.IsProduction }} {{ $css = $css | minify |
+    fingerprint | resources.PostProcess }} {{ $js = $js | minify | fingerprint
+    }} {{ end }}
 
-    {{ if hugo.IsProduction }}
-      {{ $css = $css | minify | fingerprint | resources.PostProcess }}
-      {{ $js = $js | minify | fingerprint }}
-    {{ end }}
-
-    <link href="{{ $css.RelPermalink }}" rel="stylesheet">
+    <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
     <script src="{{ $js.RelPermalink }}" type="text/javascript"></script>
   </head>
   <body>
     <header class="main-header">
-      <nav class="header-item off-canvas-menu">
-        <a class="off-canvas-menu-link" href="#">About</a>
-        <a class="off-canvas-menu-link" href="#">Project</a>
-        <a class="off-canvas-menu-link" href="#">Blog</a>
-        <a class="off-canvas-menu-link" href="#">Community</a>
-        <a class="off-canvas-menu-link" href="#">Sponsors</a>
+      <div class="menu menu-icon" id="menu-button"></div>
+      <nav class="header-item off-canvas-menu" id="off-canvas-menu">
+        <a class="off-canvas-menu-link" href="#about">About</a>
+        <a class="off-canvas-menu-link" href="#projects">Projects</a>
+        <a class="off-canvas-menu-link" href="#blog">Blog</a>
+        <a class="off-canvas-menu-link" href="#community">Community</a>
+        <a class="off-canvas-menu-link" href="#sponsor">Sponsors</a>
       </nav>
 
       <h1 class="header-item header-logo">
-        <a href="/"><img src="/images/logo-karavel.svg" alt="Karavel"></a>
+        <a href="/"><img src="/images/logo-karavel.svg" alt="Karavel" /></a>
       </h1>
 
       <h2 class="header-item text-center">Sailing smoothly on the cloud sea</h2>
     </header>
     <main>
+      <div class="main-card text-center">
+        We are a community that aims to foster collaboration and knowledge share
+        in the open-source container world
+      </div>
+      <div class="content">
+        <div id="about">
+          <h1>About</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+            mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+            cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Nam gravida odio ac ligula
+            condimentum commodo.
+          </p>
+        </div>
+        <div id="projects">
+          <h1>Projects</h1>
+          <div class="card-container">
+            <div class="card xs">
+              <p>Karavel Container Platform</p>
+              <a href="#">Discover</a>
+            </div>
+            <div class="card xs">
+              <p>Dex Operator</p>
+              <a href="#">Discover</a>
+            </div>
+            <div class="card xs">
+              <p>Oauth2 proxy</p>
+              <a href="#">Discover</a>
+            </div>
+          </div>
+        </div>
+        <div id="blog">
+          <h1>Blogs</h1>
+          <div class="card-container">
+            <div class="card xl">
+              <p>Karavel Container Platform</p>
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
+                risus mauris. Integer vitae pretium quam. Aliquam finibus
+                lacinia nisl non cursus. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia curae; Nam
+                gravida odio ac ligula condimentum commodo.
+              </div>
+              <button class="button">Read</button>
+            </div>
+            <div class="card xl">
+              <p>Dex Operator</p>
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
+                risus mauris. Integer vitae pretium quam. Aliquam finibus
+                lacinia nisl non cursus. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia curae; Nam
+                gravida odio ac ligula condimentum commodo.
+              </div>
+              <button class="button">Read</button>
+            </div>
+          </div>
+        </div>
+        <div id="community">
+          <h1>Community</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+            mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+            cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Nam gravida odio ac ligula
+            condimentum commodo.
+          </p>
+          <button class="button fill">View</button>
+        </div>
+        <div id="sponsor">
+          <h1>Sponsor</h1>
+          <img src="/images/NeosperienceCloud.svg" alt="Neosperience Cloud" />
+        </div>
+      </div>
     </main>
+    <footer class="main-footer">
+      <h1 class="footer-item footer-logo">
+        <a href="/"
+          ><img src="/images/logo-karavel-white.svg" alt="Karavel"
+        /></a>
+      </h1>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+        mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+        cursus.
+      </div>
+    </footer>
   </body>
-<html>
+  <html></html>
+</html>

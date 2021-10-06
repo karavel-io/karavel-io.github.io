@@ -1,3 +1,3 @@
-import { OffCanvasMenu } from './components/off-canvas-menu.js';
+import { OffCanvasMenu } from "./components/off-canvas-menu.js";
 
-new OffCanvasMenu('.menu');
+new OffCanvasMenu(".menu");
