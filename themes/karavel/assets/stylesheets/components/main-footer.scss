@@ -1,24 +1,18 @@
 .main-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px;
-
-  text-align: center;
+  background-color: $darker-gray;
+  color: $white;
   font-size: 32px;
   font-family: "Noto Serif Regular";
   font-weight: lighter;
+  padding: $gutter-biggest;
+  text-align: center;
 
-  background-color: $darker-gray;
-  color: $white;
+  @include media("<tablet-portrait") {
+    padding: $gutter-big $gutter-standard;
+  }
+
   .footer-logo {
-    margin: 45px;
-  }
-  p {
-    margin: 30px;
-  }
-  img {
-    height: 150px;
+    width: 156px;
+    margin: 0 auto $gutter-bigger;
   }
 }
