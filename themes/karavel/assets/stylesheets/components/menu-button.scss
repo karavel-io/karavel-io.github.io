@@ -1,52 +1,50 @@
 .menu-button {
+  background: $black;
+  cursor: pointer;
+  display: none;
+  padding: 8px;
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
   z-index: 1;
-  visibility: hidden;
-  background: rgba(0, 0, 0, 0.2);
-  div {
-    width: 40px;
-    height: 4px;
-    background: $white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  div::before,
-  div::after {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 4px;
-    background: $white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  div::before {
-    transform: translateY(-10px);
-  }
-  div::after {
-    transform: translateY(10px);
-  }
-  &.open div {
-    transform: translateX(-50px);
-    background: transparent;
-    box-shadow: none;
-  }
-  &.open div::before {
-    transform: rotate(45deg) translate(35px, -35px);
-  }
-  &.open div::after {
-    transform: rotate(-45deg) translate(35px, 35px);
-  }
+
   @include media("<tablet-landscape") {
-    visibility: visible;
+    display: block;
+  }
+
+  .menu-bar {
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height: 5px;
+    width: 35px;
+    transition: all 0.5s ease-in-out;
+
+    &-top {
+      transform-origin: 0 0;
+    }
+
+    &-bottom {
+      transform-origin: 0 100%;
+    }
+
+    & + .menu-bar {
+      margin-top: 10px
+    }
+  }
+
+  &.open .menu-bar {
+
+    &-top {
+      transform: rotate(45deg) translate(7px, -2.5px);
+    }
+
+    &-center {
+      opacity: 0;
+    }
+
+    &-bottom {
+      transform: rotate(-45deg) translate(7px, 2.5px);
+    }
   }
 }
