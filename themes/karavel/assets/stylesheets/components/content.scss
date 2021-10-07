@@ -1,0 +1,12 @@
+.content {
+  margin: auto;
+  margin-bottom: $gutter-bigger;
+
+  @include media(">=tablet-landscape") {
+    width: $main-column;
+  }
+
+  @include media("<tablet-landscape") {
+    padding: 0 $gutter-standard
+  }
+}
