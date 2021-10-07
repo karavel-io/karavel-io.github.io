@@ -1,17 +1,14 @@
 .button {
-  cursor: pointer;
-  width: 140px;
-  border-radius: 13px;
   border: 2px solid $blue;
+  border-radius: 13px;
   color: $blue;
-  margin: auto 0 0 auto;
+  cursor: pointer;
+  font-size: 26px;
+  min-width: 140px;
+  padding: 13px;
+
   &:hover {
     color: $white;
     background-color: $blue;
-  }
-  &.fill {
-    float: right;
-    font-size: 26px;
-    width: 198px;
   }
 }
