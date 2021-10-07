@@ -1,88 +1,134 @@
-{{ define "title" }}{{ .Title }} - {{ .Params.subtitle }}{{ end }} {{ define
-"main" }}
-<header class="main-header">
-  <div class="menu menu-button">
-    <div class="menu-bar menu-bar-top"></div>
-    <div class="menu-bar menu-bar-center"></div>
-    <div class="menu-bar menu-bar-bottom"></div>
-  </div>
-  <nav class="header-item off-canvas-menu">
-    <a class="off-canvas-menu-link" href="#about">About</a>
-    <a class="off-canvas-menu-link" href="#projects">Projects</a>
-    <a class="off-canvas-menu-link" href="#blog">Blog</a>
-    <a class="off-canvas-menu-link" href="#community">Community</a>
-    <a class="off-canvas-menu-link" href="#sponsor">Sponsors</a>
-  </nav>
-  <h1 class="header-item header-logo">
-    <a class="block" href="/">
-      <img src="/images/logo-karavel.svg" alt="Karavel" />
-    </a>
-  </h1>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <h1 class="header-item text-center">{{ .Params.subtitle }}</h1>
-</header>
-<main class="container">
-  <div class="card main text-center">{{ .Description }}</div>
-  <section class="site-section" id="about">
-    <h2>About</h2>
-    <p>{{ .Content }}</p>
-  </section>
-  <section class="site-section" id="projects">
-    <h2>Projects</h2>
-    <div class="card-container">
-      {{- range .Params.projects }}
-      <div class="card xs text-center">
-        <p>{{ .name }}</p>
-        <a href="{{ .url }}" target="_blank">Discover</a>
+    <title>Karavel - Sailing smoothly on the cloud sea</title>
+
+    {{ $options := (dict "includePaths" (slice "node_modules")) }} {{ $css :=
+    resources.Get "stylesheets/main.scss" | resources.ToCSS $options |
+    resources.PostCSS }} {{ $js := resources.Get "javascripts/main.js" |
+    js.Build "main.js" }} {{ if hugo.IsProduction }} {{ $css = $css | minify |
+    fingerprint | resources.PostProcess }} {{ $js = $js | minify | fingerprint
+    }} {{ end }}
+
+    <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
+    <script src="{{ $js.RelPermalink }}" type="text/javascript"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="menu menu-button" id="toggle-menu">
+        <div class="menu-bar menu-bar-top"></div>
+        <div class="menu-bar menu-bar-center"></div>
+        <div class="menu-bar menu-bar-bottom"></div>
       </div>
-      {{- end }}
-    </div>
-  </section>
-  <section class="site-section" id="blog">
-    <h2>Blog</h2>
-    <div class="card-container">
-      <div class="card xl">
-        <h3 class="as-h2">Lorem ipsum</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
-          mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
-          cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
-          ultrices posuere cubilia curae; Nam gravida odio ac ligula
-          condimentum commodo.
-        </p>
-        <a href="#" class="button">Read</a>
-      </div>
-      <div class="card xl">
-        <h3 class="as-h2">Lorem ipsum</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
-          mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
-          cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
-          ultrices posuere cubilia curae; Nam gravida odio ac ligula
-          condimentum commodo.
-        </p>
-        <a href="#" class="button">Read</a>
-      </div>
-    </div>
-  </section>
-  <section class="site-section" id="community">
-    <h2>Community</h2>
-    <p>{{ .Params.community }}</p>
-    <footer class="section-footer text-right">
-      <a href="#" class="button spaced-top-standard">View</a>
-    </footer>
-  </section>
-  <section class="site-section" id="sponsor">
-    <h2>Sponsor</h2>
-    <ul class="sponsors-list">
-      {{- range sort .Params.sponsors "name" "asc" }}
-      <li class="sponsor-item">
-        <a href="{{ .url }}" target="_blank">
-          <img src="{{ .logo }}" alt="{{ .name }}"/>
+      <nav class="header-item off-canvas-menu" id="off-canvas-menu">
+        <a class="off-canvas-menu-link" href="#about">About</a>
+        <a class="off-canvas-menu-link" href="#projects">Projects</a>
+        <a class="off-canvas-menu-link" href="#blog">Blog</a>
+        <a class="off-canvas-menu-link" href="#community">Community</a>
+        <a class="off-canvas-menu-link" href="#sponsor">Sponsors</a>
+      </nav>
+
+      <h1 class="header-item header-logo">
+        <a class="block" href="/">
+          <img src="/images/logo-karavel.svg" alt="Karavel" />
         </a>
-      </li>
-      {{- end }}
-    </ul>
-  </section>
-</main>
-{{ end }}
+      </h1>
+
+      <h1 class="header-item text-center">Sailing smoothly on the cloud sea</h1>
+    </header>
+    <main>
+      <div class="card main text-center">
+        We are a community that aims to foster collaboration and knowledge share
+        in the open-source container world
+      </div>
+      <div class="content">
+        <section id="about">
+          <h2>About</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+            mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+            cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Nam gravida odio ac ligula
+            condimentum commodo.
+          </p>
+        </section>
+        <section id="projects">
+          <h2>Projects</h2>
+          <div class="card-container">
+            <div class="card xs text-center">
+              <p>Karavel Container Platform</p>
+              <a href="#">Discover</a>
+            </div>
+            <div class="card xs text-center">
+              <p>Dex Operator</p>
+              <a href="#">Discover</a>
+            </div>
+            <div class="card xs text-center">
+              <p>Oauth2 proxy</p>
+              <a href="#">Discover</a>
+            </div>
+          </div>
+        </section>
+        <section id="blog">
+          <h2>Blogs</h2>
+          <div class="card-container">
+            <div class="card xl">
+              <h3>Lorem ipsum</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
+                risus mauris. Integer vitae pretium quam. Aliquam finibus
+                lacinia nisl non cursus. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia curae; Nam
+                gravida odio ac ligula condimentum commodo.
+              </p>
+              <button class="button">Read</button>
+            </div>
+            <div class="card xl">
+              <h3>Lorem ipsum</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
+                risus mauris. Integer vitae pretium quam. Aliquam finibus
+                lacinia nisl non cursus. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia curae; Nam
+                gravida odio ac ligula condimentum commodo.
+              </p>
+              <button class="button">Read</button>
+            </div>
+          </div>
+        </section>
+        <section id="community">
+          <h2>Community</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+            mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+            cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Nam gravida odio ac ligula
+            condimentum commodo.
+          </p>
+          <footer class="section-footer text-right">
+            <button class="button spaced-top-standard">View</button>
+          </footer>
+        </section>
+        <section id="sponsor">
+          <h2>Sponsor</h2>
+          <img src="/images/NeosperienceCloud.svg" alt="Neosperience Cloud" />
+        </section>
+      </div>
+    </main>
+    <footer class="main-footer">
+      <h1 class="footer-logo">
+        <a class="block" href="/">
+          <img src="/images/logo-karavel-white.svg" alt="Karavel"/>
+        </a>
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+        mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+        cursus.
+      </p>
+    </footer>
+  </body>
+  <html></html>
+</html>

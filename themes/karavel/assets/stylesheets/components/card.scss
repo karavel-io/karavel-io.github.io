@@ -5,23 +5,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   font-size: 24px;
-  margin: $gutter-small ($gutter-big / 2);
   padding: $gutter-standard;
-  width: calc(100% - #{$gutter-big});
+
+  @include media("<tablet-landscape") {
+    margin: $gutter-small auto;
+    width: 100%;
+  }
 
   &-container {
     display: flex;
-    flex-wrap: wrap;
-    margin: -$gutter-small (-$gutter-big / 2);
-    @include media("<=mobile") {
+    justify-content: space-between;
+    @include media("<tablet-landscape") {
       flex-direction: column;
+    }
+  }
+
+  & + .card {
+    @include media(">=tablet-landscape") {
+      margin-left: $gutter-big
     }
   }
 
   &.main {
     font-size: 36px;
+    max-width: calc(100% - #{$gutter-standard * 2});
     margin: 0 auto;
 
     @include media(">#{$main-column + $gutter-standard * 2}") {
@@ -35,23 +44,19 @@
 
     @include media(">=tablet-portrait") {
       padding: $gutter-bigger;
-      margin-top: -$gutter-hero;
+      margin-top: -133.5px;
     }
   }
 
   &.xs {
-    @include media(">mobile") {
-      width: calc(50% - #{$gutter-big});
-    }
-
-    @include media(">=tablet-portrait") {
-      width: calc(33% - #{$gutter-big});
+    @include media(">=tablet-landscape") {
+      width: 33%;
     }
   }
 
   &.xl {
-    @include media(">=tablet-portrait") {
-      width: calc(50% - #{$gutter-big});
+    @include media(">=tablet-landscape") {
+      width: 50%;
     }
 
     p {
@@ -61,14 +66,15 @@
       text-overflow: ellipsis;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
-      @include media("<=tablet-portrait") {
-        font-size: 20px;
-      }
     }
   }
 
-  h3 + p {
-    margin-top: $gutter-standard;
+  h3 {
+    font-size: 44px;
+
+    & + p {
+      margin-top: $gutter-standard;
+    }
   }
 
   p {
