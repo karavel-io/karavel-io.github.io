@@ -1,69 +1,72 @@
 class OffCanvasMenu {
   constructor(selector) {
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener('DOMContentLoaded', () => {
       if (document.querySelectorAll(selector).length > 0) {
         this.selector = selector;
         this.init();
       }
     });
   }
-  xDown = null;
 
   init() {
+    this.touchStartX = null;
     this.bindEvents();
-  }
-  toggleMenu() {
-    const element = document.getElementById("off-canvas-menu");
-    element.classList.toggle("menu-open");
-    const menuIcon = document.getElementById("toggle-menu");
-    menuIcon.classList.toggle("open");
-  }
-  openMenu() {
-    const element = document.getElementById("off-canvas-menu");
-    element.classList.add("menu-open");
-    const menuIcon = document.getElementById("toggle-menu");
-    menuIcon.classList.add("open");
-  }
-  closeMenu() {
-    const element = document.getElementById("off-canvas-menu");
-    element.classList.remove("menu-open");
-    const menuIcon = document.getElementById("toggle-menu");
-    menuIcon.classList.remove("open");
   }
 
   bindEvents() {
-    const element = document.getElementById("toggle-menu");
-    element.addEventListener("click", this.toggleMenu);
+    document.querySelector('.menu-button').addEventListener('click', this.handleMenuButtonClick);
 
-    const links = document.getElementsByClassName("off-canvas-menu-link");
-    Object.keys(links).forEach((key) => {
-      links[key].addEventListener("click", this.closeMenu);
+    document.querySelectorAll('.off-canvas-menu-link').forEach((element) => {
+      element.addEventListener('click', this.closeMenu);
     });
 
-    document.addEventListener("touchstart", (event) =>
-      this.handleTouchStart(event)
-    );
-    document.addEventListener("touchmove", (event) => this.handleSwipe(event));
+    document.addEventListener('touchstart', this.handleTouchStart);
+    document.addEventListener('touchmove', this.handleTouchMove);
+    document.addEventListener('touchend', this.handleTouchEnd);
+    document.addEventListener('touchcancel', this.handleTouchEnd);
   }
 
-  handleTouchStart(event) {
-    const firstTouch = event.touches[0];
-    this.xDown = firstTouch.clientX;
+  handleMenuButtonClick = () => {
+    this.toggleMenu();
   }
 
-  handleSwipe(event) {
-    if (!this.xDown) {
+  openMenu() {
+    this.toggleMenu(true);
+  }
+
+  closeMenu = () => {
+    this.toggleMenu(false);
+  }
+
+  toggleMenu(forceOpen) {
+    document.querySelector('.off-canvas-menu').classList.toggle('open',forceOpen);
+    document.querySelector('.menu-button').classList.toggle('open', forceOpen);
+
+    this.touchStartX = null;
+  }
+
+  handleTouchStart = (event) => {
+    this.touchStartX = event.touches[0].clientX;
+  }
+
+  handleTouchMove = (event) => {
+    if (this.touchStartX === null) {
       return;
     }
-    const xUp = event.touches[0].clientX;
-    const swipeDifference = this.xDown - xUp;
 
-    if (swipeDifference < 0) {
+    const swipeDifference = event.touches[0].clientX - this.touchStartX;
+
+    if (swipeDifference > 50) {
       this.openMenu();
-    } else {
+    }
+
+    if (swipeDifference < -50) {
       this.closeMenu();
     }
-    this.xDown = null;
+  }
+
+  handleTouchEnd = (event) => {
+    this.touchStartX = null;
   }
 }
 
