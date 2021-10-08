@@ -80,7 +80,7 @@
     </section>
     <section id="sponsor">
       <h2>Sponsor</h2>
-      {{- range .Params.sponsors }}
+      {{- range sort .Params.sponsors "name" "asc" }}
       <a href="{{ .url }}" target="_blank">
         <img src="{{ .logo }}" alt="{{ .name }}"/>
       </a>
