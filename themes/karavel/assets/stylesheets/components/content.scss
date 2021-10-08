@@ -1,19 +1,13 @@
 .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
   margin: auto;
-  margin-bottom: 125px;
+  margin-bottom: $gutter-bigger;
 
   @include media(">=tablet-landscape") {
-    width: 920px;
+    width: $main-column;
   }
+
   @include media("<tablet-landscape") {
-    margin: 32px;
-  }
-  @include media("<mobile") {
-    margin: 16px;
+    padding: 0 $gutter-standard;
   }
 
   img {

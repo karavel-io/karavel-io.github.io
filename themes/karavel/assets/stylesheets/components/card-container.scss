@@ -1,7 +1,0 @@
-.card-container {
-  display: flex;
-  justify-content: space-between;
-  @include media("<tablet-landscape") {
-    flex-direction: column;
-  }
-}

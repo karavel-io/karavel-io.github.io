@@ -1,48 +1,89 @@
 html {
   font-family: "Noto Sans", sans-serif;
+  line-height: 1.363636364;
   scroll-behavior: smooth;
 }
 
-.hidden {
-  display: none;
+a {
+
+  &, &:active {
+    color: $blue;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.text-center {
-  text-align: center;
-}
-
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: "Noto Serif Regular";
   font-weight: lighter;
+  margin: 0;
+}
+
+h1, h2 {
+  margin: $gutter-bigger 0 $gutter-big;
 }
 
 h1 {
   font-size: 66px;
-  @include media("<=mobile") {
+  @include media("<=tablet-portrait") {
     font-size: 33px;
   }
 }
 
 h2 {
   font-size: 44px;
-  @include media("<=mobile") {
+  @include media("<=tablet-portrait") {
     font-size: 26px;
   }
 }
 
 h3 {
-  font-size: 38px;
-  margin: 10px 0;
-  @include media("<=mobile") {
-    font-size: 23px;
+  font-size: 34px;
+  @include media("<=tablet-portrait") {
+    font-size: 22px;
   }
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 p {
   font-size: 32px;
-  @include media("<=mobile") {
+  margin: 0;
+  @include media("<=tablet-portrait") {
     font-size: 20px;
   }
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.spaced-top-standard {
+  margin-top: $gutter-standard;
+}
+
+.spaced-bottom-standard {
+  margin-bottom: $gutter-standard;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }

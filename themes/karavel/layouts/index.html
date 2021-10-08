@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title></title>
+    <title>Karavel - Sailing smoothly on the cloud sea</title>
 
     {{ $options := (dict "includePaths" (slice "node_modules")) }} {{ $css :=
     resources.Get "stylesheets/main.scss" | resources.ToCSS $options |
@@ -18,7 +18,9 @@
   <body>
     <header class="main-header">
       <div class="menu menu-button" id="toggle-menu">
-        <div></div>
+        <div class="menu-bar menu-bar-top"></div>
+        <div class="menu-bar menu-bar-center"></div>
+        <div class="menu-bar menu-bar-bottom"></div>
       </div>
       <nav class="header-item off-canvas-menu" id="off-canvas-menu">
         <a class="off-canvas-menu-link" href="#about">About</a>
@@ -29,13 +31,15 @@
       </nav>
 
       <h1 class="header-item header-logo">
-        <a href="/"><img src="/images/logo-karavel.svg" alt="Karavel" /></a>
+        <a class="block" href="/">
+          <img src="/images/logo-karavel.svg" alt="Karavel" />
+        </a>
       </h1>
 
       <h1 class="header-item text-center">Sailing smoothly on the cloud sea</h1>
     </header>
     <main>
-      <div class="main-card text-center">
+      <div class="card main text-center">
         We are a community that aims to foster collaboration and knowledge share
         in the open-source container world
       </div>
@@ -53,15 +57,15 @@
         <section id="projects">
           <h2>Projects</h2>
           <div class="card-container">
-            <div class="card xs">
+            <div class="card xs text-center">
               <p>Karavel Container Platform</p>
               <a href="#">Discover</a>
             </div>
-            <div class="card xs">
+            <div class="card xs text-center">
               <p>Dex Operator</p>
               <a href="#">Discover</a>
             </div>
-            <div class="card xs">
+            <div class="card xs text-center">
               <p>Oauth2 proxy</p>
               <a href="#">Discover</a>
             </div>
@@ -71,7 +75,7 @@
           <h2>Blogs</h2>
           <div class="card-container">
             <div class="card xl">
-              <h3>Karavel Container Platform</h3>
+              <h3>Lorem ipsum</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
                 risus mauris. Integer vitae pretium quam. Aliquam finibus
@@ -82,7 +86,7 @@
               <button class="button">Read</button>
             </div>
             <div class="card xl">
-              <h3>Dex Operator</h3>
+              <h3>Lorem ipsum</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
                 risus mauris. Integer vitae pretium quam. Aliquam finibus
@@ -103,7 +107,9 @@
             ultrices posuere cubilia curae; Nam gravida odio ac ligula
             condimentum commodo.
           </p>
-          <button class="button fill">View</button>
+          <footer class="section-footer text-right">
+            <button class="button spaced-top-standard">View</button>
+          </footer>
         </section>
         <section id="sponsor">
           <h2>Sponsor</h2>
@@ -112,10 +118,10 @@
       </div>
     </main>
     <footer class="main-footer">
-      <h1 class="footer-item footer-logo">
-        <a href="/"
-          ><img src="/images/logo-karavel-white.svg" alt="Karavel"
-        /></a>
+      <h1 class="footer-logo">
+        <a class="block" href="/">
+          <img src="/images/logo-karavel-white.svg" alt="Karavel"/>
+        </a>
       </h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus

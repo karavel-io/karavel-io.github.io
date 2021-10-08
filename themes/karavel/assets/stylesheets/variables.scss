@@ -2,6 +2,7 @@
 $breakpoints: (
   mobile: 420px,
   tablet-portrait: 768px,
+  main-column: 960px,
   tablet-landscape: 1024px,
   desktop: 1280px,
 );
@@ -15,3 +16,12 @@ $light-gray: #858585;
 $lighter-gray: #8f8f8f;
 $white: #fff;
 $blue: #251bff;
+
+// Sizes
+$gutter-standard: 34px;
+$gutter-big: 44px;
+$gutter-bigger: 64px;
+$gutter-biggest: 100px;
+$gutter-small: 16px;
+
+$main-column: 960px;

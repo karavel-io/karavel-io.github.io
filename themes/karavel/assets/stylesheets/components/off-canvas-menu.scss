@@ -1,10 +1,10 @@
 .off-canvas-menu {
   display: flex;
+  justify-content: center;
+
   @include media("<tablet-landscape") {
-    margin-top: 0 !important;
-    background-color: $dark-gray;
+    background-color: $black;
     flex-direction: column;
-    margin: 0;
     height: 100vh;
     width: 300px;
     padding: 20px;
@@ -18,24 +18,29 @@
       transform: translateX(0);
     }
   }
-  @include media(">=tablet-landscape") {
-    justify-content: space-between;
-  }
 
   &-link {
-    color: $black;
+    color: $white;
     font-size: 24px;
-    padding: 10px 0;
-    min-width: 160px;
+    padding: $gutter-small;
     text-align: center;
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
-    @include media("<tablet-landscape") {
-      color: $light-gray;
+
+    @include media(">=tablet-landscape") {
       & + & {
-        border-top: 1px solid $light-gray;
+        margin-left: 128px;
+      }
+    }
+
+    @include media("<tablet-landscape") {
+      color: $white;
+
+      & + & {
+        border-top: 1px solid $white;
       }
     }
   }
