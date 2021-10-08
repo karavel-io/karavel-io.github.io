@@ -4,5 +4,6 @@
       <img src="/images/logo-karavel-white.svg" alt="Karavel"/>
     </a>
   </h1>
-  <p>{{ .Params.footer }}</p>
+  <p>{{  .Param "footer" | markdownify }}</p>
+  <p>{{ .Site.Copyright }}</p>
 </footer>
