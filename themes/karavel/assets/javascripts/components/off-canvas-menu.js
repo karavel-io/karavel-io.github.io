@@ -14,9 +14,7 @@ class OffCanvasMenu {
   }
 
   bindEvents() {
-    document
-      .querySelector('.menu-button')
-      .addEventListener('click', this.handleMenuButtonClick);
+    document.querySelector('.menu-button').addEventListener('click', this.handleMenuButtonClick);
 
     document.querySelectorAll('.off-canvas-menu-link').forEach((element) => {
       element.addEventListener('click', this.closeMenu);
@@ -30,7 +28,7 @@ class OffCanvasMenu {
 
   handleMenuButtonClick = () => {
     this.toggleMenu();
-  };
+  }
 
   openMenu() {
     this.toggleMenu(true);
@@ -38,12 +36,10 @@ class OffCanvasMenu {
 
   closeMenu = () => {
     this.toggleMenu(false);
-  };
+  }
 
   toggleMenu(forceOpen) {
-    document
-      .querySelector('.off-canvas-menu')
-      .classList.toggle('open', forceOpen);
+    document.querySelector('.off-canvas-menu').classList.toggle('open',forceOpen);
     document.querySelector('.menu-button').classList.toggle('open', forceOpen);
 
     this.touchStartX = null;
@@ -51,7 +47,7 @@ class OffCanvasMenu {
 
   handleTouchStart = (event) => {
     this.touchStartX = event.touches[0].clientX;
-  };
+  }
 
   handleTouchMove = (event) => {
     if (this.touchStartX === null) {
@@ -67,11 +63,11 @@ class OffCanvasMenu {
     if (swipeDifference < -50) {
       this.closeMenu();
     }
-  };
+  }
 
   handleTouchEnd = (event) => {
     this.touchStartX = null;
-  };
+  }
 }
 
 export { OffCanvasMenu };
