@@ -14,7 +14,7 @@
     transform: translateX(-100%);
     transition: transform 300ms ease-in-out;
 
-    &.menu-open {
+    &.open {
       transform: translateX(0);
     }
   }
