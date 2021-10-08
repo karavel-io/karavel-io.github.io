@@ -12,8 +12,13 @@
 
   background-color: $darker-gray;
   color: $white;
+  .footer-logo {
+    margin: 45px;
+  }
+  p {
+    margin: 30px;
+  }
   img {
     height: 150px;
-    margin-bottom: 60px;
   }
 }

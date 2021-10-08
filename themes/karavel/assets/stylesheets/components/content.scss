@@ -4,7 +4,7 @@
   justify-content: center;
 
   margin: auto;
-  margin-bottom: 60px;
+  margin-bottom: 125px;
 
   @include media(">=tablet-landscape") {
     width: 920px;
@@ -14,5 +14,9 @@
   }
   @include media("<mobile") {
     margin: 16px;
+  }
+
+  img {
+    margin: 45px 0;
   }
 }
