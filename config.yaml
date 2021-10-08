@@ -2,8 +2,14 @@ baseURL: https://karavel.io/
 languageCode: en-us
 title: The Karavel Project
 theme: karavel
-copyright: The Karavel Project
+copyright: Copyright 2021 The Karavel Project
 defaultContentLanguage: en
 languages:
   en:
     weight: 1
+    params:
+      footer: |
+        [GitHub](https://github.com/karavel-io)
+        [Discuss](https://github.com/karavel-io/community/discussions)
+        [Twitter](https://twitter.com/karavel-io)
+        [Discord](https://discord.gg/ZrKBndbmje)
