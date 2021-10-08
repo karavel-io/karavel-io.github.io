@@ -1,13 +1,8 @@
 <footer class="main-footer">
   <h1 class="footer-logo">
     <a class="block" href="/">
-      <img src="/images/logo-karavel-white.svg" alt="Karavel" />
+      <img src="/images/logo-karavel-white.svg" alt="Karavel"/>
     </a>
   </h1>
-  <nav class="footer-menu spaced-top-standard">
-    {{  .Param "footer" | markdownify }}
-  </nav>
-  <span class="footer-copy spaced-top-standard">
-    {{ .Site.Copyright }}
-  </span>
+  <p>{{ .Params.footer }}</p>
 </footer>
