@@ -3,10 +3,9 @@
 
 {{ $options := (dict "includePaths" (slice "node_modules")) }} {{ $css :=
 resources.Get "stylesheets/main.scss" | resources.ToCSS $options |
-resources.PostCSS }} {{ $js := resources.Get "javascripts/main.js" |
-js.Build "main.js" }} {{ if hugo.IsProduction }} {{ $css = $css | minify |
-fingerprint | resources.PostProcess }} {{ $js = $js | minify | fingerprint
-}} {{ end }}
+resources.PostCSS }} {{ $js := resources.Get "javascripts/main.js" | js.Build
+"main.js" }} {{ if hugo.IsProduction }} {{ $css = $css | minify | fingerprint |
+resources.PostProcess }} {{ $js = $js | minify | fingerprint }} {{ end }}
 
 <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
 <script src="{{ $js.RelPermalink }}" type="text/javascript"></script>
