@@ -1,8 +1,7 @@
 .main-footer {
   background-color: $darker-gray;
   color: $white;
-  font-size: 32px;
-  font-family: "Noto Serif Regular";
+  font-size: 20px;
   font-weight: lighter;
   padding: $gutter-biggest;
   text-align: center;
@@ -11,8 +10,21 @@
     padding: $gutter-big $gutter-standard;
   }
 
-  .footer-logo {
-    width: 156px;
-    margin: 0 auto $gutter-bigger;
+  .footer {
+
+    &-logo {
+      width: 156px;
+      margin: 0 auto $gutter-bigger;
+    }
+
+    &-menu a {
+      color: $white;
+      margin: 0 $gutter-small;
+    }
+
+    &-copy {
+      display: inline-block;
+      font-size: 16px;
+    }
   }
 }

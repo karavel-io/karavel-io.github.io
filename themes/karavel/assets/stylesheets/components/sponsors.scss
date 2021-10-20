@@ -1,0 +1,9 @@
+.sponsors-list {
+  list-style: none;
+  margin: $gutter-bigger 0 $gutter-biggest;
+  padding: 0;
+}
+
+.sponsor-item + .sponsor-item {
+  margin-top: $gutter-big;
+}
