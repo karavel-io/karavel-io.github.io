@@ -26,21 +26,21 @@ h1, h2 {
   margin: $gutter-bigger 0 $gutter-big;
 }
 
-h1 {
+h1, .as-h1 {
   font-size: 66px;
   @include media("<=tablet-portrait") {
     font-size: 33px;
   }
 }
 
-h2 {
+h2, .as-h2 {
   font-size: 44px;
   @include media("<=tablet-portrait") {
     font-size: 26px;
   }
 }
 
-h3 {
+h3, .as-h3 {
   font-size: 34px;
   @include media("<=tablet-portrait") {
     font-size: 22px;
@@ -54,6 +54,14 @@ img {
 
 p {
   font-size: 32px;
+  margin: 0;
+  @include media("<=tablet-portrait") {
+    font-size: 20px;
+  }
+}
+
+a {
+  font-size: 24px;
   margin: 0;
   @include media("<=tablet-portrait") {
     font-size: 20px;

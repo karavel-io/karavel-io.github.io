@@ -10,14 +10,11 @@
     padding: 0 $gutter-standard;
   }
 
-  &.spaced {
-    margin: $gutter-biggest auto;
+  .site-section {
+    margin-top: $gutter-bigger;
   }
 
-  p {
-    margin-bottom: $gutter-standard;
-  }
-  img {
-    margin: 45px 0;
+  &.spaced {
+    margin: $gutter-biggest auto;
   }
 }
