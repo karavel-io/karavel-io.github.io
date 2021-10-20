@@ -9,14 +9,17 @@
     padding-bottom: $gutter-biggest;
   }
 
-  .header-item {
-    margin: 0 auto;
-  }
+  .header {
 
-  .header-logo {
-    margin: $gutter-big auto;
-    @include media('>=tablet-landscape') {
-      margin: $gutter-biggest auto;
+    &-item {
+      margin: 0 auto;
+    }
+
+    &-logo {
+      margin: $gutter-big auto;
+      @include media(">=tablet-landscape") {
+        margin: $gutter-biggest auto;
+      }
     }
   }
 
