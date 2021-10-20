@@ -66,15 +66,14 @@
       text-overflow: ellipsis;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
+      @include media("<=tablet-portrait") {
+        font-size: 20px;
+      }
     }
   }
 
-  h3 {
-    font-size: 44px;
-
-    & + p {
-      margin-top: $gutter-standard;
-    }
+  h3 + p {
+    margin-top: $gutter-standard;
   }
 
   p {
