@@ -1,6 +1,5 @@
-{{ define "title" }}{{ .Title }} - {{ .Params.subtitle }}{{ end }}
-
-{{ define "main" }}
+{{ define "title" }}{{ .Title }} - {{ .Params.subtitle }}{{ end }} {{ define
+"main" }}
 <header class="main-header">
   <div class="menu menu-button">
     <div class="menu-bar menu-bar-top"></div>
@@ -16,22 +15,18 @@
   </nav>
   <h1 class="header-item header-logo">
     <a class="block" href="/">
-      <img src="/images/logo-karavel.svg" alt="Karavel"/>
+      <img src="/images/logo-karavel.svg" alt="Karavel" />
     </a>
   </h1>
 
   <h1 class="header-item text-center">{{ .Params.subtitle }}</h1>
 </header>
 <main>
-  <div class="card main text-center">
-    {{ .Description }}
-  </div>
+  <div class="card main text-center">{{ .Description }}</div>
   <div class="content">
     <section id="about">
       <h2>About</h2>
-      <p>
-        {{ .Content }}
-      </p>
+      <p>{{ .Content }}</p>
     </section>
     <section id="projects">
       <h2>Projects</h2>
@@ -50,22 +45,22 @@
         <div class="card xl">
           <h3>Lorem ipsum</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
-            risus mauris. Integer vitae pretium quam. Aliquam finibus
-            lacinia nisl non cursus. Vestibulum ante ipsum primis in
-            faucibus orci luctus et ultrices posuere cubilia curae; Nam
-            gravida odio ac ligula condimentum commodo.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+            mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+            cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Nam gravida odio ac ligula
+            condimentum commodo.
           </p>
           <button class="button">Read</button>
         </div>
         <div class="card xl">
           <h3>Lorem ipsum</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
-            risus mauris. Integer vitae pretium quam. Aliquam finibus
-            lacinia nisl non cursus. Vestibulum ante ipsum primis in
-            faucibus orci luctus et ultrices posuere cubilia curae; Nam
-            gravida odio ac ligula condimentum commodo.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+            mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+            cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Nam gravida odio ac ligula
+            condimentum commodo.
           </p>
           <button class="button">Read</button>
         </div>
@@ -82,7 +77,7 @@
       <h2>Sponsor</h2>
       {{- range sort .Params.sponsors "name" "asc" }}
       <a href="{{ .url }}" target="_blank">
-        <img src="{{ .logo }}" alt="{{ .name }}"/>
+        <img src="{{ .logo }}" alt="{{ .name }}" />
       </a>
       {{- end }}
     </section>
