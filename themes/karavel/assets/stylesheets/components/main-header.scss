@@ -1,10 +1,10 @@
 .main-header {
-  background: url("/images/bg-index.png") no-repeat center;
+  background: url('/images/bg-index.png') no-repeat center;
   background-size: cover;
   padding: $gutter-big 0 250px;
   text-align: center;
 
-  @include media("<tablet-portrait") {
+  @include media('<tablet-portrait') {
     padding: $gutter-standard;
     padding-bottom: $gutter-biggest;
   }
@@ -15,9 +15,13 @@
 
   .header-logo {
     margin: $gutter-big auto;
-    @include media(">=tablet-landscape") {
+    @include media('>=tablet-landscape') {
       margin: $gutter-biggest auto;
     }
+  }
+
+  &.community {
+    background: url('/images/bg_community.png') no-repeat center;
   }
 
   .menu-icon {
@@ -33,7 +37,7 @@
       cursor: pointer;
     }
 
-    @include media("<tablet-landscape") {
+    @include media('<tablet-landscape') {
       visibility: visible;
     }
   }

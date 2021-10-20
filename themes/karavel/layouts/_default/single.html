@@ -1,25 +1,27 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+{{ define "title" }}{{ .Title }} - {{ .Params.subtitle }}{{ end }} {{ define
+"main" }}
+<header class="main-header community">
+  <div class="menu menu-button">
+    <div class="menu-bar menu-bar-top"></div>
+    <div class="menu-bar menu-bar-center"></div>
+    <div class="menu-bar menu-bar-bottom"></div>
+  </div>
+  <nav class="header-item off-canvas-menu">
+    <a class="off-canvas-menu-link" href="#about">About</a>
+    <a class="off-canvas-menu-link" href="#projects">Projects</a>
+    <a class="off-canvas-menu-link" href="#blog">Blog</a>
+    <a class="off-canvas-menu-link" href="#community">Community</a>
+    <a class="off-canvas-menu-link" href="#sponsor">Sponsors</a>
+  </nav>
+  <h1 class="header-item header-logo">
+    <a class="block" href="/">
+      <img src="/images/logo-karavel.svg" alt="Karavel" />
+    </a>
+  </h1>
 
-    <title>Karavel - Sailing smoothly on the cloud sea</title>
-
-    {{ $options := (dict "includePaths" (slice "node_modules")) }} {{ $css :=
-    resources.Get "stylesheets/main.scss" | resources.ToCSS $options |
-    resources.PostCSS }} {{ $js := resources.Get "javascripts/main.js" |
-    js.Build "main.js" }} {{ if hugo.IsProduction }} {{ $css = $css | minify |
-    fingerprint | resources.PostProcess }} {{ $js = $js | minify | fingerprint
-    }} {{ end }}
-
-    <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
-    <script src="{{ $js.RelPermalink }}" type="text/javascript"></script>
-  </head>
-  <body>
-    {{- partial "header.html" . -}}
-    <h2>single TEMPLATE</h2>
-    <h1>{{.Title}}</h1>
-    <p>{{.Content}}</p>
-    {{- partial "footer.html" . -}}
-  </body>
-</html>
+  <h1 class="header-item text-center">{{ .Params.subtitle }}</h1>
+</header>
+<div class="content spaced">
+  <p>{{.Content}}</p>
+</div>
+{{end}}
