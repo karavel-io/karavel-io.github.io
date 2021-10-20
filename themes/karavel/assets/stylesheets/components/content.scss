@@ -2,14 +2,21 @@
   margin: auto;
   margin-bottom: $gutter-bigger;
 
-  @include media(">=tablet-landscape") {
+  @include media('>=tablet-landscape') {
     width: $main-column;
   }
 
-  @include media("<tablet-landscape") {
+  @include media('<tablet-landscape') {
     padding: 0 $gutter-standard;
   }
 
+  &.spaced {
+    margin: $gutter-biggest auto;
+  }
+
+  p {
+    margin-bottom: $gutter-standard;
+  }
   img {
     margin: 45px 0;
   }
