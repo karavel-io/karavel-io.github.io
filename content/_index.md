@@ -9,10 +9,6 @@ projects:
       url: https://platform.karavel.io
     - name: Dex Operator
       url: https://github.com/karavel-io/dex-operator
-sponsors:
-    - name: Neosperience Cloud
-      logo: /images/sponsor-neosperience-cloud.svg
-      url: https://www.neosperience.com/neosperience-cloud/
 ---
 
 The Karavel Project is the open governance community of technologists with the goal of building tools and knowledge in
