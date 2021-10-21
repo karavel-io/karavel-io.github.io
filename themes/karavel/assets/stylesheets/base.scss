@@ -28,6 +28,9 @@ h1, h2 {
 
 h1, .as-h1 {
   font-size: 66px;
+  @include media(">tablet-portrait") {
+    letter-spacing: -1px;
+  }
   @include media("<=tablet-portrait") {
     font-size: 33px;
   }
