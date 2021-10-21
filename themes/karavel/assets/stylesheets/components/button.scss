@@ -3,9 +3,11 @@
   border-radius: 13px;
   color: $blue;
   cursor: pointer;
+  display: inline-block;
   font-size: 26px;
   min-width: 140px;
   padding: 13px;
+  text-align: center;
   @include media("<=tablet-portrait") {
     font-size: 20px;
     min-width: 108px;
@@ -13,7 +15,8 @@
   }
 
   &:hover {
-    color: $white;
     background-color: $blue;
+    color: $white;
+    text-decoration: none;
   }
 }
