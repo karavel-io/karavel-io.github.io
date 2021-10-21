@@ -9,6 +9,10 @@
     padding-bottom: $gutter-biggest;
   }
 
+  &.single {
+    background: url('/images/bg-community.png') no-repeat center;
+  }
+
   .header {
 
     &-item {
@@ -21,10 +25,6 @@
         margin: $gutter-biggest auto;
       }
     }
-  }
-
-  &.community {
-    background: url('/images/bg_community.png') no-repeat center;
   }
 
   .menu-icon {
