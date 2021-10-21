@@ -4,7 +4,13 @@
     <div class="menu-bar menu-bar-center"></div>
     <div class="menu-bar menu-bar-bottom"></div>
   </div>
+  {{- $withLogo := .Params.withLogo | default true }}
   <nav class="header-item off-canvas-menu">
+    {{ if not $withLogo }}
+    <a class="off-canvas-menu-link" href="/">
+      <img src="/images/logo-karavel.svg" alt="Karavel" class="logo"/>
+    </a>
+    {{ end }}
     <a class="off-canvas-menu-link" href="/#about">About</a>
     <a class="off-canvas-menu-link" href="/#projects">Projects</a>
     <a class="off-canvas-menu-link" href="/#blog">Blog</a>
@@ -12,7 +18,7 @@
     <a class="off-canvas-menu-link" href="/#sponsor">Sponsors</a>
   </nav>
   <h1 class="header-item header-logo">
-    {{- if .Params.withLogo | default true }}
+    {{- if $withLogo }}
     <a class="block" href="/">
       <img src="/images/logo-karavel.svg" alt="Karavel" />
     </a>

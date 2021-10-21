@@ -1,7 +1,7 @@
 .main-header {
   background: url('/images/bg-index.png') no-repeat center;
   background-size: cover;
-  padding: $gutter-big 0 250px;
+  padding: $gutter-big 0 200px;
   text-align: center;
 
   @include media('<tablet-portrait') {

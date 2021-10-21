@@ -1,9 +1,8 @@
-{{ define "title" }}{{ .Title }} - {{ .Params.subtitle }}{{ end }}
 {{ define "main" }}
 {{ partial "header.html" . }}
 <main class="container spaced-top">
   <div class="content">
-    <p>{{.Content}}</p>
+    {{.Content}}
   </div>
 </main>
 {{end}}
