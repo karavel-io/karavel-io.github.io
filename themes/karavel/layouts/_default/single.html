@@ -1,25 +1,6 @@
-{{ define "title" }}{{ .Title }} - {{ .Params.subtitle }}{{ end }} {{ define
-"main" }}
-<header class="main-header community">
-  <div class="menu menu-button">
-    <div class="menu-bar menu-bar-top"></div>
-    <div class="menu-bar menu-bar-center"></div>
-    <div class="menu-bar menu-bar-bottom"></div>
-  </div>
-  <nav class="header-item off-canvas-menu">
-    <a class="off-canvas-menu-link" href="#about">About</a>
-    <a class="off-canvas-menu-link" href="#projects">Projects</a>
-    <a class="off-canvas-menu-link" href="#blog">Blog</a>
-    <a class="off-canvas-menu-link" href="#community">Community</a>
-    <a class="off-canvas-menu-link" href="#sponsor">Sponsors</a>
-  </nav>
-  <h1 class="header-item header-logo">
-    <a class="block" href="/">
-      <img src="/images/logo-karavel.svg" alt="Karavel" />
-    </a>
-  </h1>
-  <h1 class="header-item text-center">{{ .Params.subtitle }}</h1>
-</header>
+{{ define "title" }}{{ .Title }} - {{ .Params.subtitle }}{{ end }}
+{{ define "main" }}
+{{ partial "header.html" . }}
 <main class="container spaced-top">
   <div class="content">
     <p>{{.Content}}</p>
