@@ -19,7 +19,7 @@
     }
   }
 
-  &-link {
+  &-link, &-link:active {
     color: $black;
     font-size: 24px;
     padding: $gutter-small;
