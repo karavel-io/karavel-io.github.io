@@ -12,9 +12,13 @@
     <a class="off-canvas-menu-link" href="/#sponsor">Sponsors</a>
   </nav>
   <h1 class="header-item header-logo">
+    {{- if .Params.withLogo | default true }}
     <a class="block" href="/">
       <img src="/images/logo-karavel.svg" alt="Karavel" />
     </a>
+    {{- else }}
+    {{ .Title }}
+    {{- end }}
   </h1>
-  <h1 class="header-item text-center">{{ .Params.subtitle }}</h1>
+  <h2 class="header-item text-center">{{ .Params.subtitle }}</h2>
 </header>
