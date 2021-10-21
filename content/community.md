@@ -1,7 +1,6 @@
 ---
 title: 'Community'
 subtitle: 'Community'
-draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
