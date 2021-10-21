@@ -1,0 +1,37 @@
+.container {
+  margin: auto;
+  margin-bottom: $gutter-biggest;
+
+  @include media("<tablet-portrait") {
+    margin-bottom: $gutter-bigger;
+  }
+
+  @include media('<tablet-landscape') {
+    padding: 0 $gutter-standard;
+  }
+
+  @include media('>=tablet-landscape') {
+    width: $main-column;
+  }
+
+  &.spaced-top {
+    @include media("<tablet-portrait") {
+      margin-top: $gutter-bigger;
+    }
+
+    @include media(">=tablet-portrait") {
+      margin-top: $gutter-hero;
+    }
+  }
+
+  .site-section {
+    margin-top: $gutter-bigger;
+  }
+
+  .content {
+
+    p + p {
+      margin-top: $gutter-standard
+    }
+  }
+}

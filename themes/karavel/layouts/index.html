@@ -21,70 +21,68 @@
 
   <h1 class="header-item text-center">{{ .Params.subtitle }}</h1>
 </header>
-<main>
+<main class="container">
   <div class="card main text-center">{{ .Description }}</div>
-  <div class="content">
-    <section class="site-section" id="about">
-      <h2>About</h2>
-      <p>{{ .Content }}</p>
-    </section>
-    <section class="site-section" id="projects">
-      <h2>Projects</h2>
-      <div class="card-container">
-        {{- range .Params.projects }}
-        <div class="card xs text-center">
-          <p>{{ .name }}</p>
-          <a href="{{ .url }}" target="_blank">Discover</a>
-        </div>
-        {{- end }}
+  <section class="site-section" id="about">
+    <h2>About</h2>
+    <p>{{ .Content }}</p>
+  </section>
+  <section class="site-section" id="projects">
+    <h2>Projects</h2>
+    <div class="card-container">
+      {{- range .Params.projects }}
+      <div class="card xs text-center">
+        <p>{{ .name }}</p>
+        <a href="{{ .url }}" target="_blank">Discover</a>
       </div>
-    </section>
-    <section class="site-section" id="blog">
-      <h2>Blog</h2>
-      <div class="card-container">
-        <div class="card xl">
-          <h3 class="as-h2">Lorem ipsum</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
-            mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
-            cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
-            ultrices posuere cubilia curae; Nam gravida odio ac ligula
-            condimentum commodo.
-          </p>
-          <button class="button">Read</button>
-        </div>
-        <div class="card xl">
-          <h3 class="as-h2">Lorem ipsum</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
-            mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
-            cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
-            ultrices posuere cubilia curae; Nam gravida odio ac ligula
-            condimentum commodo.
-          </p>
-          <button class="button">Read</button>
-        </div>
+      {{- end }}
+    </div>
+  </section>
+  <section class="site-section" id="blog">
+    <h2>Blog</h2>
+    <div class="card-container">
+      <div class="card xl">
+        <h3 class="as-h2">Lorem ipsum</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+          mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+          cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
+          ultrices posuere cubilia curae; Nam gravida odio ac ligula
+          condimentum commodo.
+        </p>
+        <button class="button">Read</button>
       </div>
-    </section>
-    <section class="site-section" id="community">
-      <h2>Community</h2>
-      <p>{{ .Params.community }}</p>
-      <footer class="section-footer text-right">
-        <button class="button spaced-top-standard">View</button>
-      </footer>
-    </section>
-    <section class="site-section" id="sponsor">
-      <h2>Sponsor</h2>
-      <ul class="sponsors-list">
-        {{- range sort .Params.sponsors "name" "asc" }}
-        <li class="sponsor-item">
-          <a href="{{ .url }}" target="_blank">
-            <img src="{{ .logo }}" alt="{{ .name }}"/>
-          </a>
-        </li>
-        {{- end }}
-      </ul>
-    </section>
-  </div>
+      <div class="card xl">
+        <h3 class="as-h2">Lorem ipsum</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a risus
+          mauris. Integer vitae pretium quam. Aliquam finibus lacinia nisl non
+          cursus. Vestibulum ante ipsum primis in faucibus orci luctus et
+          ultrices posuere cubilia curae; Nam gravida odio ac ligula
+          condimentum commodo.
+        </p>
+        <button class="button">Read</button>
+      </div>
+    </div>
+  </section>
+  <section class="site-section" id="community">
+    <h2>Community</h2>
+    <p>{{ .Params.community }}</p>
+    <footer class="section-footer text-right">
+      <button class="button spaced-top-standard">View</button>
+    </footer>
+  </section>
+  <section class="site-section" id="sponsor">
+    <h2>Sponsor</h2>
+    <ul class="sponsors-list">
+      {{- range sort .Params.sponsors "name" "asc" }}
+      <li class="sponsor-item">
+        <a href="{{ .url }}" target="_blank">
+          <img src="{{ .logo }}" alt="{{ .name }}"/>
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
 </main>
 {{ end }}
