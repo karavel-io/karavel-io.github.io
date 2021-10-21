@@ -1,6 +1,6 @@
 ---
-title: 'Community'
-subtitle: 'Community'
+title: Community
+subtitle: Open governance, open source, open arms
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
