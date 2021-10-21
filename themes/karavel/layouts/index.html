@@ -54,11 +54,17 @@
   </section>
   <section class="site-section" id="sponsor">
     <h2>Sponsor</h2>
+    {{- $sponsors := .GetPage "sponsors" }}
     <ul class="sponsors-list">
-      {{- range sort .Params.sponsors "name" "asc" }}
+      {{- range sort ($sponsors.Resources.Match "*.md") "Title" "asc" }}
       <li class="sponsor-item">
-        <a href="{{ .url }}" target="_blank">
-          <img src="{{ .logo }}" alt="{{ .name }}"/>
+        <a href="{{ .Params.link }}" target="_blank">
+          {{- $logo := $sponsors.Resources.GetMatch (.Params.logo | default "") }}
+          {{- if $logo }}
+            <img src="{{ $logo.RelPermalink }}" alt="{{ .Title }}"/>
+          {{- else }}
+          {{ .Title }}
+          {{- end }}
         </a>
       </li>
       {{- end }}
