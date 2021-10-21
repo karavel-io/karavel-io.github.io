@@ -1,4 +1,4 @@
-{{ define "title" }}{{ .Title }} - {{ .Params.subtitle }}{{ end }}
+{{ define "title" }}{{ .Site.Title }}{{ end }}
 {{ define "main" }}
 {{ partial "header.html" . }}
 <main class="container">
@@ -14,7 +14,9 @@
       {{- range sort ($projects.Resources.Match "*.md") ".Weight" "desc" }}
       <div class="card xs text-center">
         <p>{{ .Title }}</p>
+        {{- if .Params.link }}
         <a href="{{ .Params.link }}" target="_blank">Discover</a>
+        {{- end }}
       </div>
       {{- end }}
 
@@ -26,7 +28,7 @@
       <div class="card xl">
         <h3 class="as-h2">Coming Soon</h3>
         <p></p>
-        <a href="#" class="button">Read</a>
+        <a href="#blog" class="button">Read</a>
       </div>
     </div>
   </section>

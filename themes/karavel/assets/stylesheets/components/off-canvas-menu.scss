@@ -2,6 +2,10 @@
   display: flex;
   justify-content: center;
 
+  @include media(">=tablet-landscape") {
+    align-items: center;
+  }
+
   @include media("<tablet-landscape") {
     background-color: $black;
     flex-direction: column;
@@ -32,7 +36,7 @@
 
     @include media(">=tablet-landscape") {
       & + & {
-        margin-left: 128px;
+        margin-left: $gutter-bigger;
       }
     }
 
@@ -41,6 +45,13 @@
 
       & + & {
         border-top: 1px solid $white;
+      }
+    }
+
+    .logo {
+      height: 80px;
+      @include media("<tablet-landscape") {
+        filter: invert(1);
       }
     }
   }
