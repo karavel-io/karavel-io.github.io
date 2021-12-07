@@ -39,8 +39,8 @@
       <a href="/community" class="button spaced-top-standard">View</a>
     </footer>
   </section>
-  <section class="site-section" id="sponsor">
-    <h2>Sponsor</h2>
+  <section class="site-section" id="sponsors">
+    <h2>Sponsors</h2>
     {{- $sponsors := .GetPage "sponsors" }}
     <ul class="sponsors-list">
       {{- range sort ($sponsors.Resources.Match "*.md") "Title" "asc" }}
